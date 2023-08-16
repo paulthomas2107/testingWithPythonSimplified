@@ -138,21 +138,21 @@ class UserInterface(GridLayout):
             b = float(b)
             c = float(c)
             a = (c ** 2 - b ** 2) ** (1 / 2)
-            return {"a": a}
+            return {"a": str(a)}
 
         elif b == "" and a != "" and c != "":
             # find b
             a = float(a)
             c = float(c)
             b = (c ** 2 - a ** 2) ** (1 / 2)
-            return {"b": b}
+            return {"b": str(b)}
 
         elif c == "" and a != "" and b != "":
             # find c
             a = float(a)
             b = float(b)
             c = (a ** 2 + b ** 2) ** (1 / 2)
-            return {"c": c}
+            return {"c": str(c)}
 
         elif a == "" and b == "" and c == "":
             # 0 arguments provided
