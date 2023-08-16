@@ -50,6 +50,32 @@ class TestMyApp(unittest.TestCase):
         output = gui.pythagorean()
         self.assertEqual(output, {"c": "5.0"})
 
+    def test_inputABC(self):
+        app = myapp.Pythagorean()
+        gui = app.build()
+        widgets = gui.children
+        [print(idx, val) for idx, val in enumerate(widgets[1].children)]
+        inputA = widgets[1].children[4]
+        inputB = widgets[1].children[2]
+        inputC = widgets[1].children[0]
+        inputA.text = '3'
+        inputB.text = '4'
+        inputC.text = '5'
+        output = gui.pythagorean()
+        self.assertEqual(output, {"error": "if you already know ALL sides then you don't need me!"})
+
+    # def test_inputABWrong(self):
+    #     app = myapp.Pythagorean()
+    #     gui = app.build()
+    #     widgets = gui.children
+    #     [print(idx, val) for idx, val in enumerate(widgets[1].children)]
+    #     inputA = widgets[1].children[4]
+    #     inputB = widgets[1].children[2]
+    #     inputA.text = '3'
+    #     inputB.text = '-4'
+    #     output = gui.pythagorean()
+    #     self.assertEqual(output,  {'c': '5.0'})
+
 
 if __name__ == '__main__':
     unittest.main()

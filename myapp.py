@@ -129,6 +129,7 @@ class UserInterface(GridLayout):
         self.message.text = str(output[key])
 
     def pythagorean(self):
+
         a = self.input_a.text  # leg
         b = self.input_b.text  # leg
         c = self.input_c.text  # hypotenuse
